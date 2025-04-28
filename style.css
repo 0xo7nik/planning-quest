@@ -23,8 +23,8 @@ main{
 }
 
 .line{
-    background-color: rgb(72, 72, 72);
-    height:1px;
+    background-color: rgb(102, 101, 101);
+    height:2px;
     width:80%;
     margin-top:1%;
     margin-left:10%;

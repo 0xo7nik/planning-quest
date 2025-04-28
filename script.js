@@ -9,7 +9,7 @@ function createHourLine() {
         hour_container.appendChild(line)
         line.appendChild(textHour)
 
-        textHour.innerHTML = i
+        textHour.innerHTML = i+1
     }
   }
 createHourLine()
