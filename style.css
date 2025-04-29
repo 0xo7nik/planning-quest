@@ -10,6 +10,7 @@ main{
     margin:10px;
     height:50px;
     width:100px;
+    border-radius: 4px 0 4px 0;
 }
 
 #hour_container{
@@ -17,21 +18,42 @@ main{
     flex-direction: column;
     justify-content: space-around;
     background-color: aliceblue;
+    border: 1px solid #3d3c3c;
+    border-radius: 4px 0 4px 0;
     margin:10px;
     height:400px;
     width:82%;
+    overflow:scroll;
+    overflow-x:hidden;
+    max-height: 400px;
 }
 
 .line{
     background-color: rgb(102, 101, 101);
-    height:2px;
+    height:3px;
     width:80%;
-    margin-top:1%;
-    margin-left:10%;
+    margin-top:20px;
+    margin-bottom:20px;
+    margin-left:50px;
+}
+
+.smallLine{
+    background-color: rgb(102, 101, 101);
+    height:1px;
+    width:80%;
+    margin-top:20px;
+    margin-bottom:20px;
+    margin-left:50px;
 }
 
 .textHour{
     position:relative;
     bottom:24px;
     right:15px;
+}
+
+.smallTextHour{
+    position:relative;
+    bottom:24px;
+    right:30px;
 }
