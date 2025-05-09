@@ -29,6 +29,20 @@ main{
     max-height: 400px;
 }
 
+#plus{
+    height:30px;
+    width:30px;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/More_Icon_C.svg/640px-More_Icon_C.svg.png");
+    background-size:cover;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#plus:hover{
+    box-shadow: 0px 0px 10px green;
+    transition: .5s;
+}
+
 .line{
     display:flex;
     background-color: rgb(102, 101, 101);
@@ -61,9 +75,11 @@ main{
 }
 
 #create_container{
+    position:fixed;
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
+    border:3px black solid;
     border-radius: 20px;
     position:absolute;
     background-color: aqua;
@@ -74,9 +90,26 @@ main{
     left:10%;
 }
 
-#description-container{
+#description_container{
     display:flex;
     flex-direction: column;
+}
+
+#cross{
+    position:absolute;
+    top:-10px;
+    right:-10px;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/White_x_in_red_rounded_square.svg/1200px-White_x_in_red_rounded_square.svg.png");
+    background-size:cover;
+    height:30px;
+    width:30px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#cross:hover{
+    box-shadow: 0px 0px 10px red;
+    transition: .5s;
 }
 
 #time{
@@ -93,4 +126,5 @@ main{
     width:400px;
     height:100%;
     margin-top:20px;
+    resize:none;
 }
