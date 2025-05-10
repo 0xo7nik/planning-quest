@@ -13,15 +13,12 @@ main{
     border-radius: 4px 0 4px 0;
 }
 
-#hour_container{
+#task_container{
     display:flex;
     flex-direction: column;
-    justify-content: space-around;
     background-color: aliceblue;
     border: 1px solid #3d3c3c;
-    border-radius: 4px 0 4px 0;
     margin:10px;
-    padding:20px 0px 20px 150px;
     height:400px;
     width:82%;
     overflow:scroll;
@@ -32,6 +29,8 @@ main{
 #plus{
     height:30px;
     width:30px;
+    margin-top:20px;
+    margin-left:20px;
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/More_Icon_C.svg/640px-More_Icon_C.svg.png");
     background-size:cover;
     cursor: pointer;
@@ -43,37 +42,6 @@ main{
     transition: .5s;
 }
 
-.line{
-    display:flex;
-    background-color: rgb(102, 101, 101);
-    height:3px;
-    width:80%;
-    margin-top:40px;
-}
-
-.smallLine{
-    background-color: rgb(102, 101, 101);
-    height:1px;
-    width:80%;
-    margin-top:20px;
-    margin-bottom:20px;
-}
-
-.textHour{
-    position:relative;
-    bottom:54px;
-    right:20px;
-    width:0px;
-}
-
-.inputStyle{
-    position:relative;
-    bottom:33px;
-    height:20px;
-    width:30px;
-    color:black;
-}
-
 #create_container{
     position:fixed;
     display:flex;
@@ -81,7 +49,6 @@ main{
     justify-content: space-evenly;
     border:3px black solid;
     border-radius: 20px;
-    position:absolute;
     background-color: aqua;
     padding:30px;
     height:70%;
@@ -112,7 +79,7 @@ main{
     transition: .5s;
 }
 
-#time{
+.time{
     height:30px;
     width:100px;
 }
@@ -124,7 +91,34 @@ main{
 
 #description{
     width:400px;
-    height:100%;
+    height:70%;
     margin-top:20px;
     resize:none;
+}
+
+#boton{
+    background-color:rgb(26, 176, 176);
+    position:absolute;
+    bottom:20px;
+    height:40px;
+    width:100px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#boton:hover{
+    box-shadow: 0px 0px 10px black;
+    transition: .5s;
+}
+
+.task{
+    display:flex;
+    background-color: rgb(235, 231, 226);
+    border:1px solid black;
+    height:50px;
+    width:99%;
+}
+
+.task_title{
+    margin-left:20px;
 }
