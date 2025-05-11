@@ -2,6 +2,7 @@ const task_container = document.getElementById("task_container")
 const cross = document.getElementById("cross")
 const plus = document.getElementById("plus")
 const create_container = document.getElementById("create_container")
+const description = document.getElementById("description")
 const date = document.getElementById("date")
 const boton = document.getElementById("boton")
 const from = document.getElementById("from")
@@ -12,7 +13,7 @@ var list = {}
 // var list = {date:{name:[start_time, end_time]}}
 
 
-function create_task(start_time, end_time, name){
+function create_task(start_time, end_time, name, disc){
   let start_time_error = start_time.length==5
   let end_time_error = end_time.length==5
   let name_error = name
@@ -22,26 +23,32 @@ function create_task(start_time, end_time, name){
     const task_time = document.createElement("p")
     const task_title = document.createElement("p")
     const task_cross = document.createElement("div")
+    const task_clue = document.createElement("div")
+    let desc = description.value!=""
     task.classList.add("task")
     task_time.classList.add("task_time")
     task_title.classList.add("task_title")
     task_cross.classList.add("task_cross")
+    task_clue.classList.add("task_clue")
     task_container.appendChild(task)
     task.appendChild(task_time)
     task.appendChild(task_title)
     task.appendChild(task_cross)
+    task.appendChild(task_clue)
     task_container.appendChild(plus)
     task_cross.addEventListener("click", () => {
       remove_child(task)
       delete list[date_now][name]
     })
-    task.addEventListener("mouseover", () => {task_cross.style.display=""})
-    task.addEventListener("mouseout", () => {task_cross.style.display="none"})
+    task.addEventListener("mouseover", () => {task_cross.style.display=""; desc?task_clue.style.display="":0})
+    task.addEventListener("mouseout", () => {task_cross.style.display="none"; desc?task_clue.style.display="none":0})
     task_cross.style.display="none"
+    task_clue.style.display="none"
+    task_clue.innerHTML=disc
     task_time.innerHTML=`${start_time} - ${end_time}`
     task_title.innerHTML=name
     unplug()
-    list[date_now][name] = [start_time, end_time]
+    list[date_now][name] = [start_time, end_time, disc]
   } else{
     let error = ""
     !(start_time_error)?error+="Придурок введи в поле начало времен хоть что то. ":1
@@ -57,6 +64,7 @@ function unplug(){
   from.value=""
   to.value=""
   title.value=""
+  description.value=""
 }
 function plug(){
   create_container.style.display="flex"
@@ -69,7 +77,7 @@ function chenge_date(){
     list[date_now]={}
   } else{
     for (const [key, value] of Object.entries(list[date_now])) {
-      create_task(value[0], value[1], key)
+      create_task(value[0], value[1], key, value[2])
     }
   }
 }
@@ -78,7 +86,7 @@ function remove_child(elem){
 }
 
 date.addEventListener("change", () => {chenge_date()})
-boton.addEventListener("click", () => {create_task(from.value, to.value, title.value)})
+boton.addEventListener("click", () => {create_task(from.value, to.value, title.value, description.value)})
 cross.addEventListener("click", () => {unplug()})
 plus.addEventListener("click", () => {plug()})
 
