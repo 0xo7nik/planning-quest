@@ -112,6 +112,7 @@ main{
 }
 
 .task{
+    position: relative;
     display:flex;
     background-color: rgb(235, 231, 226);
     border:1px solid black;
@@ -124,9 +125,9 @@ main{
 }
 
 .task_cross{
-    position: relative;
+    position: absolute;
     top:10px;
-    left:500px;
+    right:10px;
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/White_x_in_red_rounded_square.svg/1200px-White_x_in_red_rounded_square.svg.png");
     background-size:cover;
     height:30px;
@@ -136,4 +137,13 @@ main{
 .task_cross:hover{
     box-shadow: 0px 0px 10px black;
     transition: .5s;
+}
+.task_clue{
+    position:absolute;
+    top:50px;
+    left:20px;
+    border:black solid 1px;
+    color:black;
+    height:20px;
+    opacity:.5;
 }
