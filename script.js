@@ -29,7 +29,7 @@ function create_task(start_time, end_time, name, disc, new_task){
     let time_error = Number(start_time.substring(0, 2))*60+Number(start_time.substring(3, 5))<=Number(end_time.substring(0, 2))*60+Number(end_time.substring(3, 5))
     let time_error_0 = Number(start_time.substring(0, 2))*60+Number(start_time.substring(3, 5))!=Number(end_time.substring(0, 2))*60+Number(end_time.substring(3, 5))
   }
-  if ((!new_task)||(start_time_error&&end_time_error&&name_error&&time_error&&time_error_0&&name_error_exist)){
+  if (start_time_error&&end_time_error&&name_error&&time_error&&time_error_0&&name_error_exist){
     const task = document.createElement("div")
     const task_time = document.createElement("p")
     const task_title = document.createElement("p")
@@ -46,6 +46,7 @@ function create_task(start_time, end_time, name, disc, new_task){
     task.appendChild(task_title)
     task.appendChild(task_cross)
     task.appendChild(task_clue)
+    task_container.appendChild(plus)
     task_cross.addEventListener("click", () => {
       remove_child(task)
       delete list[date_now][name]
