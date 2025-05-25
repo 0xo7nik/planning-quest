@@ -105,6 +105,7 @@ main{
     background-size:cover;
     cursor: pointer;
     transition: .5s;
+    z-index: 100;
 }
 
 #plus:hover{

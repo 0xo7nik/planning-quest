@@ -67,7 +67,6 @@ function create_task(start_time, end_time, name, disc, new_task){
       list2.forEach((nam)=>{list[date_now][nam][0]>start_time?task_container.appendChild(list[date_now][nam][3]):0})
       unplug()
     }
-    task_container.appendChild(plus)
   } else{
     let error = ""
     !name_error_exist?error+="Поменяй нозвание, утырок, такое уже есть. ":1
