@@ -11,7 +11,6 @@ const title = document.getElementById("title")
 
 var list = {}
 // var list = {date:{name:[start_time, end_time, description]}}
-var list2 = []
 
 
 function create_task(start_time, end_time, name, disc, new_task){
@@ -67,8 +66,7 @@ function create_task(start_time, end_time, name, disc, new_task){
       })
       if (new_task){
         list[date_now][name] = [start_time, end_time, disc, task]
-        list2.push(name)
-        list2.forEach((nam)=>{list[date_now][nam][0]>start_time?task_container.appendChild(list[date_now][nam][3]):0})
+        for (const [key, value] of Object.entries(list[date_now])){value[0]>start_time?task_container.appendChild(list[date_now][key][3]):0}
         unplug()
       }
       task.addEventListener("mouseover", () => {task_cross.style.display=""; task_redact.style.display=""; disc!=""?task_clue.style.opacity=.5:0})

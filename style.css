@@ -227,7 +227,7 @@ main{
     transition: .5s;
 }
 .task_clue{
-    position:relative;
+    position:absolute;
     top:50px;
     border:black solid 1px;
     height:20px;
