@@ -35,36 +35,38 @@ function create_task(start_time, end_time, name, disc, new_task){
     const task_title = document.createElement("p")
     const task_cross = document.createElement("div")
     const task_clue = document.createElement("div")
-    let desc = disc!=""
     task.classList.add("task")
+    task_clue.classList.add("task_clue")
     task_time.classList.add("task_time")
     task_title.classList.add("task_title")
     task_cross.classList.add("task_cross")
-    task_clue.classList.add("task_clue")
     task_container.appendChild(task)
     task.appendChild(task_time)
+    task.appendChild(task_clue)
     task.appendChild(task_title)
     task.appendChild(task_cross)
-    task.appendChild(task_clue)
-    task_container.appendChild(plus)
     task_cross.addEventListener("click", () => {
-      remove_child(task)
+      anime({
+        targets: task,
+        opacity: 0,
+        left:100,
+        duration: 1200,
+      }).finished.then(function(){remove_child(task)})
       delete list[date_now][name]
     })
-    task.addEventListener("mouseover", () => {task_cross.style.display=""; desc?task_clue.style.display="":0})
-    task.addEventListener("mouseout", () => {task_cross.style.display="none"; desc?task_clue.style.display="none":0})
+    task.addEventListener("mouseover", () => {task_cross.style.display=""; disc!=""?task_clue.style.opacity=.5:0})
+    task.addEventListener("mouseout", () => {task_cross.style.display="none"; disc!=""?task_clue.style.opacity=0:0})
     task_cross.style.display="none"
-    task_clue.style.display="none"
+    task_clue.style.opacity=0
     task_clue.innerHTML=disc
     task_time.innerHTML=`${start_time} - ${end_time}`
     task_title.innerHTML=name
     if (new_task){
       list[date_now][name] = [start_time, end_time, disc, task]
-      list2.forEach((nam)=>{list[date_now][nam][0]>list[date_now][name][0]?task_container.appendChild(list[date_now][nam][3]):0})
       list2.push(name)
+      list2.forEach((nam)=>{list[date_now][nam][0]>start_time?task_container.appendChild(list[date_now][nam][3]):0})
       unplug()
     }
-    task_container.appendChild(plus)
   } else{
     let error = ""
     !name_error_exist?error+="Поменяй нозвание, утырок, такое уже есть. ":1
@@ -76,7 +78,6 @@ function create_task(start_time, end_time, name, disc, new_task){
     alert(error)
   }
 }
-
 function unplug(){
   create_container.style.display="none"
   from.value=""
