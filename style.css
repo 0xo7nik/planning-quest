@@ -43,7 +43,7 @@ h1 {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color .3s;
 }
 
 #logo_button:hover {
@@ -56,7 +56,7 @@ h1 {
     background-size:cover;
     height:500px;
     width:99%;
-    filter: grayscale(80%);
+    filter: grayscale(60%);
 }
 
 #discription_text{
@@ -207,6 +207,22 @@ main{
     cursor: pointer;
 }
 .task_cross:hover{
+    box-shadow: 0px 0px 10px black;
+    transition: .5s;
+}
+.task_redact{
+    position: absolute;
+    top:10px;
+    right:10px;
+    left:410px;
+    background-image: url("https://wutils.com/unicode/8230/8230-mongolian-baiti-bold-1024px.png");
+    background-size:cover;
+    height:30px;
+    width:30px;
+    cursor: pointer;
+    border:1px solid black;
+}
+.task_redact:hover{
     box-shadow: 0px 0px 10px black;
     transition: .5s;
 }
