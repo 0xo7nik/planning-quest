@@ -218,3 +218,6 @@ main{
     opacity:.5;
     z-index: 7;
 }
+footer {
+    background-color: rgb(175, 175, 175);
+}
