@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  font-family: Cursive;
 }
 
 header {
@@ -247,4 +248,11 @@ footer {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+.telega_creators {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    color: rgb(245, 245, 245, 0.93);
+    gap: 15px;
 }
