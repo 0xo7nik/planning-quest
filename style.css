@@ -5,14 +5,12 @@ html {
 header {
     background-color: #f0f0f0;
     height:15vh;
-}
-
-#header_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding:0px 100px;
 }
+
 
 #logo {
     display: flex;
@@ -90,7 +88,7 @@ main{
 
 #plus{
     position:absolute;
-    top:190vh;
+    top:80vh;
     right:20%;
     height:30px;
     width:30px;
@@ -99,13 +97,12 @@ main{
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/More_Icon_C.svg/640px-More_Icon_C.svg.png");
     background-size:cover;
     cursor: pointer;
-    transition: .5s;
+    transition: box-shadow .5s;
     z-index: 100;
 }
 
 #plus:hover{
     box-shadow: 0px 0px 10px green;
-    transition: .5s;
 }
 
 #create_container{
@@ -121,6 +118,7 @@ main{
     width:70%;
     top:10%;
     left:10%;
+    z-index: 101;
 }
 
 #description_container{
@@ -137,12 +135,11 @@ main{
     height:30px;
     width:30px;
     cursor: pointer;
-    transition: .5s;
+    transition: box-shadow .5s;
 }
 
 #cross:hover{
     box-shadow: 0px 0px 10px red;
-    transition: .5s;
 }
 
 .time{
@@ -153,11 +150,12 @@ main{
 #title{
     width:400px;
     height:40px;
+    border:1px solid black;
 }
 
 #description{
     width:400px;
-    height:70%;
+    height:50%;
     margin-top:20px;
     resize:none;
 }
@@ -169,12 +167,11 @@ main{
     height:40px;
     width:100px;
     cursor: pointer;
-    transition: .5s;
+    transition: box-shadow .5s;
 }
 
 #boton:hover{
     box-shadow: 0px 0px 10px black;
-    transition: .5s;
 }
 
 .task{
@@ -200,10 +197,10 @@ main{
     height:30px;
     width:30px;
     cursor: pointer;
+    transition: box-shadow .5s;
 }
 .task_cross:hover{
     box-shadow: 0px 0px 10px black;
-    transition: .5s;
 }
 .task_redact{
     position: absolute;
@@ -216,10 +213,10 @@ main{
     width:30px;
     cursor: pointer;
     border:1px solid black;
+    transition: box-shadow .5s;
 }
 .task_redact:hover{
     box-shadow: 0px 0px 10px black;
-    transition: .5s;
 }
 .task_clue{
     position:absolute;
@@ -231,4 +228,23 @@ main{
 }
 footer {
     background-color: rgb(175, 175, 175);
+}
+.error{
+    color:red;
+    margin:0px;
+    font-size:.7em;
+}
+#from{
+    border:1px solid black;
+}
+#to{
+    border:1px solid black;
+}
+#logo_button, header h1{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }

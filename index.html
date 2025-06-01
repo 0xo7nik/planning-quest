@@ -7,15 +7,11 @@
 </head>
 <body>
 <header id="Миша">
-    <div id="header_container">
-        <div id="logo">
-            <img src="https://icon-library.com/images/6-512_97080.png" alt="Логотип Планировщика задач">
-            <h1>Планировщик задач</h1>
-        </div>
-        <nav>
-            <a href="#Андрей" id="logo_button">К задачам</a>
-        </nav>
+    <div id="logo">
+        <img src="https://icon-library.com/images/6-512_97080.png" alt="Логотип Планировщика задач">
+        <h1>Планировщик задач</h1>
     </div>
+    <div id="logo_button">К задачам</div>
 </header>
 <div id="discription_container">
     <div id="discription_text">
@@ -32,9 +28,17 @@
         <div>
             <div>От <input id="from" class="time" type="time"/></div> 
             <div>До <input id="to" class="time" type="time"/></div>
+            <p class="error" id="start_time_error">Придурок, введи в поле начало времен хоть что-то. </p>
+            <p class="error" id="end_time_error">Дурак, поле окончания времен должно быть полностью заполнено. </p>
+            <p class="error" id="time_error">У тебя, бестолоч, время на задачу в минус ушло. Исправляй. </p>
+            <p class="error" id="time_error_0">У тебя на задачу времени не капли уходит, флэш тупой. Исправляй. </p>
         </div>
         <div id="description_container">
-            <input id="title" placeholder="Введите название задачи"/>
+            <div>
+                <input id="title" placeholder="Введите название задачи"/>
+                <p class="error" id="name_error_exist">Поменяй название, утырок, такое уже есть. </p>
+                <p class="error" id="name_error">Ушлёпок, введи в поле названия задачи хотябы знак. </p>
+            </div>
             <textarea id="description" name="story" rows="5" cols="33"></textarea>
         </div>
         <button id="boton">Создать</button>
@@ -46,6 +50,8 @@
     <a href>https://web.telegram.org/a/#6368047523</a>
     <h2 style="color:rgb(245, 245, 245, 0.93)">Зайцев Степан:</h2>
     <a href>https://web.telegram.org/a/#5529428121</a>
+    <h2 style="color:rgb(245, 245, 245, 0.93)">Щедрин Михаил:</h2>
+    <a href>https://web.telegram.org/a/#1301878235</a>
 </footer>
 <script src='https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js'></script>
 <script src="script.js"></script>
